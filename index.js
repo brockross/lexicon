@@ -1,25 +1,26 @@
-const { ApolloServer, gql } = require("apollo-server");
-
-const typeDefs = gql`
-  type TestyBoi {
-    id: Int
-    label: String
-  }
-
-  type Query {
-    testResults: [TestyBoi]
-  }
-`;
+import { ApolloServer } from "apollo-server";
+import { typeDefs } from "./graphql/schema.js";
 
 const testData = [
-  { id: 1, label: "I'm number one" },
-  { id: 2, label: "Dos is el best" },
-  { id: 3, label: "threeee" },
+  {
+    id: 1,
+    term: "SRP",
+    definitions: [
+      {
+        shortDesc:
+          "Acronym for Single Responsibility Principle--the idea that a given function/method/class should have only one responsibility.",
+        longDesc: "blah blah blah long description",
+        furtherReading: ["https://somesite.com/srp"],
+        tags: ["acronym"],
+      },
+      {},
+    ],
+  },
 ];
 
 const resolvers = {
   Query: {
-    testResults: () => testData,
+    lexicon: () => testData,
   },
 };
 
