@@ -1,0 +1,13 @@
+{
+  "name": "lexicon",
+  "version": "0.1.0",
+  "description": "A glossary of terms frequently encountered during the course of an engineering career",
+  "main": "index.js",
+  "author": "Brock Ross <m.brock.ross@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "apollo-server": "^3.4.0",
+    "graphql": "^15.6.1"
+  }
+}
