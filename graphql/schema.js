@@ -22,6 +22,6 @@ export const typeDefs = gql`
   }
 
   type Query {
-    lexicon: [Term]
+    allTerms: [Term]
   }
 `;

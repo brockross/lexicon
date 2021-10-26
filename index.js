@@ -1,28 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { ApolloServer } from "apollo-server";
 import { typeDefs } from "./graphql/schema.js";
-
-const testData = [
-  {
-    id: 1,
-    term: "SRP",
-    definitions: [
-      {
-        shortDesc:
-          "Acronym for Single Responsibility Principle--the idea that a given function/method/class should have only one responsibility.",
-        longDesc: "blah blah blah long description",
-        furtherReading: ["https://somesite.com/srp"],
-        tags: ["acronym"],
-      },
-      {},
-    ],
-  },
-];
-
-const resolvers = {
-  Query: {
-    lexicon: () => testData,
-  },
-};
+import { resolvers } from "./graphql/resolvers.js";
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
